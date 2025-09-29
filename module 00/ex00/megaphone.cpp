@@ -3,30 +3,49 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 10:55:53 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/09/29 17:09:31 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/09/30 01:20:22 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-using namespace std;
+
+
+class StringClass{
+    public:
+        std:: string orig_string;
+        void setData(char* &argument);
+        void megaphone(std:: string argument);
+};
+
+void StringClass:: setData(char* &argument){
+    std:: string str_argument(argument);
+    orig_string = str_argument;
+}
+
+void StringClass::megaphone(std::string argument){
+    
+    for (int i = 0; i < argument.length(); i++)
+    {
+        if (argument[i] >= 97 && argument[i] <= 122)
+            argument[i] -= 32;
+    }
+    std:: cout << argument << std:: endl;
+}
 
 int main(int argc, char *argv[])
 {
     int i;
 
-    i = 0;
     if (argc == 1)
-    {
-        cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
-    }
-    while (i < argc)
-    {
-        cout << argv[i];
-        ++i;
+        std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
+    for (i = 1; i < argc; i++){
+        StringClass a[i];
+        a->setData(argv[i]);
+        a->megaphone(a->orig_string);
     }
     return 0;
 }
