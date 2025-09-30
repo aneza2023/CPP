@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 10:55:53 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/09/30 01:20:22 by anezka           ###   ########.fr       */
+/*   Updated: 2025/09/30 11:31:42 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,10 @@ int main(int argc, char *argv[])
     if (argc == 1)
         std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
     for (i = 1; i < argc; i++){
-        StringClass a[i];
+        StringClass *a = new StringClass;
         a->setData(argv[i]);
         a->megaphone(a->orig_string);
+        delete a;
     }
     return 0;
 }
