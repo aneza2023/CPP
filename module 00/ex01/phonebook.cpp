@@ -1,49 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.h                                        :+:      :+:    :+:   */
+/*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 10:30:51 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/01 10:00:07 by anezkahavra      ###   ########.fr       */
+/*   Created: 2025/09/30 08:48:16 by anezkahavra       #+#    #+#             */
+/*   Updated: 2025/10/01 10:41:41 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
-
-class Contact{
-    public:
-        int index;
-        std:: string firstName;
-        std:: string lastName;
-        std:: string nickname;
-        std:: string phoneNum;
-        std:: string darkSecret;
-        Contact addContactData(); 
-        std:: string checkInputPresent(std:: string input);
-};
-
-class PhoneBook{
-    public:
-        Contact Contacts[8];
-        PhoneBook();
-        void addContact(Contact newContact);
-        void displayContacts();
-        int checkContactPresent();
-        std:: string truncateforDisplay(std:: string origString);
-        void searchContact();
-};
-
- std:: string Contact:: checkInputPresent(std:: string input)
- {
-    while (input.empty()){
-        std:: cout << "Invalid input. Can't be left blank\n";
-        std:: cin >> input;
-    }
-    return input;   
- }
+#include "phonebook.hpp"
 
 int PhoneBook:: checkContactPresent(void)
 {
@@ -105,7 +72,7 @@ void PhoneBook:: searchContact(void)
     }
     std:: cout << "Enter index of entry for display" << std:: endl;
     while (!(std:: cin >> index) || Contacts[index -1].index == 0){
-        std:: cout << "Invalid input. Input need to be number of index that is present" << std:: endl;
+        std:: cout << "Invalid input. Input needs to be a number of index that is present in phonebook" << std:: endl;
         std:: cin.clear();
         std:: cin.ignore(10000, '\n');
     }
@@ -127,22 +94,4 @@ void PhoneBook:: addContact(Contact newContact)
     Contacts[i] = newContact;
     Contacts[i].index = i + 1;
     i++;
-}
-
-Contact Contact:: addContactData(void)
-{
-    Contact a;
-
-    std:: cout << "Input contact name information:" << std:: endl;
-    std:: cout << "First name:" << std:: endl;
-    std:: cin >> a.firstName;
-    std:: cout << "Last name:" << std:: endl;
-    std:: cin >> a.lastName;
-    std:: cout << "Nickname:" << std:: endl;
-    std:: cin >> a.nickname;
-    std:: cout << "Phone number:" << std:: endl;
-    std:: cin >> a.phoneNum;
-    std:: cout << "Darkest secret" << std:: endl;
-    std:: cin >> a.darkSecret;
-    return (a);
 }

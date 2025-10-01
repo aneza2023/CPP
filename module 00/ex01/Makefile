@@ -6,12 +6,14 @@
 #    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/29 16:25:46 by anezkahavra       #+#    #+#              #
-#    Updated: 2025/10/01 10:05:54 by anezkahavra      ###   ########.fr        #
+#    Updated: 2025/10/01 10:40:20 by anezkahavra      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
-SRC = phone_book.cpp
+SRC = contact.cpp\
+		main.cpp\
+		phonebook.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
