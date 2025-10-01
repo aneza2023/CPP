@@ -6,7 +6,7 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:30:51 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/09/30 16:02:22 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/01 10:00:07 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 class Contact{
     public:
         int index;
-        std:: string first_name;
-        std:: string last_name;
+        std:: string firstName;
+        std:: string lastName;
         std:: string nickname;
-        std:: string phone_nb;
-        std:: string dark_secret;
-        Contact add_ContactData();
-        std:: string check_InputPresent(std:: string input);
+        std:: string phoneNum;
+        std:: string darkSecret;
+        Contact addContactData(); 
+        std:: string checkInputPresent(std:: string input);
 };
 
 class PhoneBook{
     public:
         Contact Contacts[8];
         PhoneBook();
-        void add_Contact(Contact new_cont);
-        void display_Contacts();
-        int check_ContactPresent();
-        std:: string truncate_forDisplay(std:: string orig_string);
-        void search_Contact();
+        void addContact(Contact newContact);
+        void displayContacts();
+        int checkContactPresent();
+        std:: string truncateforDisplay(std:: string origString);
+        void searchContact();
 };
 
- std:: string Contact:: check_InputPresent(std:: string input)
+ std:: string Contact:: checkInputPresent(std:: string input)
  {
     while (input.empty()){
         std:: cout << "Invalid input. Can't be left blank\n";
@@ -45,63 +45,61 @@ class PhoneBook{
     return input;   
  }
 
-int PhoneBook:: check_ContactPresent(void)
+int PhoneBook:: checkContactPresent(void)
 {
     int i;
     
     for (i = 0; i < 8; i++){
         if (Contacts[i].index != 0)
-            break;
+            return 0;
     }
-    if (i < 7)
-        return 0;
     return 1;
 }
 
 PhoneBook:: PhoneBook(void)
 {
-    for (int i = 0; i < 9; i++){
+    for (int i = 0; i < 8; i++){
     Contacts[i].index = 0;
-    Contacts[i].first_name = "";
-    Contacts[i].last_name = "";
+    Contacts[i].firstName = "";
+    Contacts[i].lastName = "";
     Contacts[i].nickname = "";
-    Contacts[i].phone_nb = "";
-    Contacts[i].dark_secret = "";
+    Contacts[i].phoneNum = "";
+    Contacts[i].darkSecret = "";
     }
 }
 
-std:: string PhoneBook:: truncate_forDisplay(std:: string orig_string)
+std:: string PhoneBook:: truncateforDisplay(std:: string origString)
 {
-    std:: string trunc_string;
+    std:: string truncString;
 
-    if (orig_string.length() >= 10){
-        trunc_string = orig_string.substr(0, 9);
-        trunc_string += ".";
+    if (origString.length() >= 10){
+        truncString = origString.substr(0, 9);
+        truncString += ".";
     }
     else
-        return orig_string;
-    return trunc_string;
+        return origString;
+    return truncString;
 }
 
-void PhoneBook:: display_Contacts()
+void PhoneBook:: displayContacts()
 {
     for (int i = 0; i < 8; i++)
     {
         if (Contacts[i].index != 0){
             std:: cout.width(10); std:: cout << std:: right << Contacts[i].index << "|";
-            std:: cout.width(10); std:: cout << std:: right << truncate_forDisplay(Contacts[i].first_name) << "|";
-            std:: cout.width(10); std:: cout << std:: right << truncate_forDisplay(Contacts[i].last_name) << "|";
-            std:: cout.width(10); std:: cout << std:: right << truncate_forDisplay(Contacts[i].nickname) << "|";
+            std:: cout.width(10); std:: cout << std:: right << truncateforDisplay(Contacts[i].firstName) << "|";
+            std:: cout.width(10); std:: cout << std:: right << truncateforDisplay(Contacts[i].lastName) << "|";
+            std:: cout.width(10); std:: cout << std:: right << truncateforDisplay(Contacts[i].nickname) << "|";
             std:: cout << std:: endl;
         }
     }
 }
 
-void PhoneBook:: search_Contact(void)
+void PhoneBook:: searchContact(void)
 {
     int index;
 
-    if (check_ContactPresent() == 1){
+    if (checkContactPresent() == 1){
         std:: cout << "No contacts present\n";
         return ;
     }
@@ -113,40 +111,38 @@ void PhoneBook:: search_Contact(void)
     }
     index = index - 1;
     std:: cout << std:: right << Contacts[index].index << std:: endl;
-    std:: cout << std:: right << Contacts[index].first_name << std:: endl;
-    std:: cout << std:: right << Contacts[index].last_name << std:: endl;
+    std:: cout << std:: right << Contacts[index].firstName << std:: endl;
+    std:: cout << std:: right << Contacts[index].lastName << std:: endl;
     std:: cout << std:: right << Contacts[index].nickname << std:: endl;
-    std:: cout << std:: right << Contacts[index].phone_nb << std:: endl;
-    std:: cout << std:: right << Contacts[index].dark_secret << std:: endl;
+    std:: cout << std:: right << Contacts[index].phoneNum << std:: endl;
+    std:: cout << std:: right << Contacts[index].darkSecret << std:: endl;
 }
 
-void PhoneBook:: add_Contact(Contact new_cont)
+void PhoneBook:: addContact(Contact newContact)
 {
     static int i;
 
     if (i > 7)
         i = 0;
-    Contacts[i] = new_cont;
+    Contacts[i] = newContact;
     Contacts[i].index = i + 1;
     i++;
 }
 
-Contact Contact:: add_ContactData(void)
+Contact Contact:: addContactData(void)
 {
     Contact a;
 
     std:: cout << "Input contact name information:" << std:: endl;
     std:: cout << "First name:" << std:: endl;
-    while (a.first_name.empty()){
-        std:: cin >> a.first_name;
-    }
+    std:: cin >> a.firstName;
     std:: cout << "Last name:" << std:: endl;
-    std:: cin >> a.last_name;
+    std:: cin >> a.lastName;
     std:: cout << "Nickname:" << std:: endl;
     std:: cin >> a.nickname;
     std:: cout << "Phone number:" << std:: endl;
-    std:: cin >> a.phone_nb;
+    std:: cin >> a.phoneNum;
     std:: cout << "Darkest secret" << std:: endl;
-    std:: cin >> a.dark_secret;
+    std:: cin >> a.darkSecret;
     return (a);
 }
