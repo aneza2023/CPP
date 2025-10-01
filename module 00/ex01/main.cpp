@@ -6,7 +6,7 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:39:16 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/01 10:39:53 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/01 13:34:11 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    std:: string command; 
+    std::string command; 
     PhoneBook phonebook;
 
     while (1){
