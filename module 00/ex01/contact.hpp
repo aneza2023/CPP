@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:30:51 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/01 14:43:06 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/02 14:11:01 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class Contact{
         std::string nickname;
         std::string phoneNum;
         std::string darkSecret;
-    public:
         int index;
+
+        std::string checkInputPresent(std::string input);
 
     public:
         std::string getFirstName(void);
@@ -32,18 +33,20 @@ class Contact{
         std::string getNickame(void);
         std::string getPhoneNum(void);
         std::string getDarkSecret(void);
+        int getIndex(void);
         void setFirstName(void);
         void setLastName(void);
         void setNickname(void);
         void setPhoneNum(void);
         void setDarkSecret(void);
+        void setIndex(void);
         void setFirstName(std::string& value);
         void setLastName(std::string& value);
         void setNickname(std::string& value);
         void setPhoneNum(std::string& value);
         void setDarkSecret(std::string& value);
+        void setIndex(int &value);
         Contact addContactData(void); 
-        std::string checkInputPresent(std::string input);
 };
 
 #endif

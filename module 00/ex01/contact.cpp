@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:34:58 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/01 14:46:23 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/02 14:11:57 by ahavrank         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,14 @@ void Contact::setDarkSecret(std::string& value){
     }
 }
 
+void Contact::setIndex(void){
+        index = 0;
+}
+
+void Contact::setIndex(int& value){
+        index = value;
+}
+
 std::string Contact::getFirstName(void){
     return firstName;
 }
@@ -79,6 +87,10 @@ std::string Contact::getPhoneNum(void){
 
 std::string Contact::getDarkSecret(void){
     return darkSecret;
+}
+
+int:: Contact::getIndex(void){
+    return index;
 }
 
 std:: string Contact:: checkInputPresent(std:: string input)
