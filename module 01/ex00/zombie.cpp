@@ -6,31 +6,30 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:49:21 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/01 15:54:44 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/07 15:49:09 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zombie.hpp"
 
-void Zombie::announce(void){
+Zombie::Zombie(void) : _name(""){}
+
+Zombie::~Zombie(void){
+    std::cout << this->_name << "is being destroyed" << std:: endl;
+}
+
+void Zombie::announce(void) const{
+    if (!this->_name.empty())
+        std::cout << this->_name;
     std::cout << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-Zombie* Zombie::newZombie(std::string name){
-    Zombie* newZombie = new Zombie;
-    newZombie->name = name;
-    return newZombie;
+std::string Zombie::getName(void) const{
+    return this->_name;
 }
 
-void Zombie::cleanZombie(Zombie* zombie){
-    std::cout << zombie->name << "deleted\n";
-    delete zombie;
-    zombie = nullptr;
-}
-
-void Zombie::randomChump(std::string name){
-    Zombie random;
-    random.name = name;
-    std::cout << random.name;
-    announce();
+void Zombie::setName(std::string& name){
+    if (!name.empty()){
+        this->_name = name;
+    }
 }

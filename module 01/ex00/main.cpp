@@ -6,7 +6,7 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:55:48 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/01 15:35:50 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/07 15:50:41 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int main(void)
 {
-    Zombie zombie;
+    Zombie* Zombie = newZombie("Jana");
+    Zombie->announce();
+    delete Zombie;
 
-    zombie.randomChump("Jarda");
-    zombie.newZombie("Paja");
-    zombie.announce();
+    randomChump("Ludva");
     return 0;
-    
 }
