@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
+#    By: anezka <anezka@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/07 15:52:04 by anezkahavra       #+#    #+#              #
-#    Updated: 2025/10/07 16:26:01 by anezkahavra      ###   ########.fr        #
+#    Updated: 2025/10/22 13:31:11 by anezka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

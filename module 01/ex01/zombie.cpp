@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 15:51:55 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/07 16:34:22 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/22 13:31:13 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

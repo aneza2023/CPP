@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:57:15 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/07 15:39:54 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/22 13:30:57 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Zombie{
         std::string _name;
     public:
         Zombie();
+        Zombie(std::string name);
         ~Zombie();
         void announce(void) const;
         std::string getName(void) const;

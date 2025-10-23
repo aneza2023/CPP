@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:35:57 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/02 14:11:05 by ahavrank         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:13:31 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 class PhoneBook{
     private:
-        Contact Contacts[8];
+        Contact _Contacts[8];
 
         int checkContactPresent();
         std::string truncateforDisplay(std::string origString);

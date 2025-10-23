@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
+#    By: anezka <anezka@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/29 16:25:46 by anezkahavra       #+#    #+#              #
-#    Updated: 2025/10/01 10:40:20 by anezkahavra      ###   ########.fr        #
+#    Updated: 2025/10/23 14:30:13 by anezka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,7 @@ SRC = contact.cpp\
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-#VAL_FLAGS = -fsanitize=address,undefined -g
 CPP_FLAGS = -std=c++98
-#LIBS = s
 
 all: $(NAME)
 

@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 14:49:21 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/07 15:49:09 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/22 13:30:54 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "zombie.hpp"
 
 Zombie::Zombie(void) : _name(""){}
+
+Zombie::Zombie(std::string name) : _name(name) {}
 
 Zombie::~Zombie(void){
     std::cout << this->_name << "is being destroyed" << std:: endl;

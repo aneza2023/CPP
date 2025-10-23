@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 10:55:48 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/22 13:30:46 by anezka           ###   ########.fr       */
+/*   Created: 2025/10/21 22:51:36 by anezka            #+#    #+#             */
+/*   Updated: 2025/10/22 13:31:45 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int main(void)
-{
-    Zombie* Zombie = newZombie("Jana");
-    Zombie->announce();
-    delete Zombie;
+#include <iostream>
+#include <string>
 
-    randomChump("Ludva");
-    return 0;
-}
+class Weapon{
+    private:
+        std::string _type;
+    public:
+        Weapon();
+        Weapon(std::string &type);
+        ~Weapon();
+        std::string getType(void) const;
+        void setType(std::string& type);
+};
+
+#endif

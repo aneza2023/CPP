@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 12:06:15 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/07 15:49:03 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/10/22 13:30:50 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

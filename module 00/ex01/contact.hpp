@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:30:51 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/02 14:11:01 by ahavrank         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:13:23 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 class Contact{
     private:
-        std::string firstName;
-        std::string lastName;
-        std::string nickname;
-        std::string phoneNum;
-        std::string darkSecret;
-        int index;
+        std::string _firstName;
+        std::string _lastName;
+        std::string _nickname;
+        std::string _phoneNum;
+        std::string _darkSecret;
+        int _index;
 
         std::string checkInputPresent(std::string input);
 

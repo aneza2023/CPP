@@ -5,19 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 10:55:48 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/22 13:30:46 by anezka           ###   ########.fr       */
+/*   Created: 2025/10/21 22:51:29 by anezka            #+#    #+#             */
+/*   Updated: 2025/10/22 13:31:39 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "HumanA.hpp"
 
-int main(void)
+int main()
 {
-    Zombie* Zombie = newZombie("Jana");
-    Zombie->announce();
-    delete Zombie;
-
-    randomChump("Ludva");
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
     return 0;
 }

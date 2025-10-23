@@ -3,94 +3,94 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahavrank <ahavrank@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:34:58 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/02 14:11:57 by ahavrank         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:13:20 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.hpp"
 
 void Contact::setFirstName(){
-        firstName = "";
+        _firstName = "";
 }
 void Contact::setFirstName(std::string& value){
     if (!value.empty()){
-        firstName = value;
+        _firstName = value;
     }
 }
 
 void Contact::setLastName(void){
-        lastName = "";
+        _lastName = "";
 }
 
 void Contact::setLastName(std::string& value){
     if (!value.empty()){
-        lastName = value;
+        _lastName = value;
     }
 }
 
 void Contact::setNickname(void){
-      nickname = "";
+    _nickname = "";
 }
 
 void Contact::setNickname(std::string& value){
     if (!value.empty()){
-      nickname = value;
+      _nickname = value;
     }
 }
 
 void Contact::setPhoneNum(void){
-       phoneNum = "";
+       _phoneNum = "";
 }
 
 void Contact::setPhoneNum(std::string& value){
     if (!value.empty()){
-       phoneNum = value;
+       _phoneNum = value;
     }
 }
 
 void Contact::setDarkSecret(void){
-        darkSecret = "";
+        _darkSecret = "";
 }
 
 void Contact::setDarkSecret(std::string& value){
     if (!value.empty()){
-        darkSecret = value;
+        _darkSecret = value;
     }
 }
 
 void Contact::setIndex(void){
-        index = 0;
+    _index = 0;
 }
 
 void Contact::setIndex(int& value){
-        index = value;
+    _index = value;
 }
 
 std::string Contact::getFirstName(void){
-    return firstName;
+    return _firstName;
 }
 
 std::string Contact::getLastName(void){
-    return lastName;
+    return _lastName;
 }
 
 std::string Contact::getNickame(void){
-    return nickname;
+    return _nickname;
 }
 
 std::string Contact::getPhoneNum(void){
-    return phoneNum;
+    return _phoneNum;
 }
 
 std::string Contact::getDarkSecret(void){
-    return darkSecret;
+    return _darkSecret;
 }
 
 int:: Contact::getIndex(void){
-    return index;
+    return _index;
 }
 
 std:: string Contact:: checkInputPresent(std:: string input)
@@ -108,14 +108,15 @@ Contact Contact:: addContactData(void)
 
     std::cout << "Provide contact details:" << std:: endl;
     std::cout << "First name:" << std:: endl;
-    std::cin >> a.firstName;
+    std::cin >> a._firstName;
     std::cout << "Last name:" << std:: endl;
-    std::cin >> a.lastName;
+    std::cin >> a._lastName;
     std::cout << "Nickname:" << std:: endl;
-    std::cin >> a.nickname;
+    std::cin >> a._nickname;
     std::cout << "Phone number:" << std:: endl;
-    std::cin >> a.phoneNum;
+    std::cin >> a._phoneNum;
     std::cout << "Darkest secret" << std:: endl;
-    std:: cin >> a.darkSecret;
+    std:: cin >> a._darkSecret;
+    std::cout << "Adding contact complete.\n";
     return (a);
 }
