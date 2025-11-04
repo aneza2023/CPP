@@ -5,22 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anezka <anezka@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/07 15:52:04 by anezkahavra       #+#    #+#              #
-#    Updated: 2025/10/29 12:08:23 by anezka           ###   ########.fr        #
+#    Created: 2025/11/04 14:50:36 by anezka            #+#    #+#              #
+#    Updated: 2025/11/04 15:16:39 by anezka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex01
 SRC = main.cpp\
-		zombie.cpp\
-		zombieHorde.cpp
+		Fixed.cpp
+		
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-#VAL_FLAGS = -fsanitize=address,undefined -g
 CPP_FLAGS = -std=c++98
-#LIBS = s
 
 all: $(NAME)
 

@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 22:51:12 by anezka            #+#    #+#             */
-/*   Updated: 2025/10/24 14:51:29 by anezka           ###   ########.fr       */
+/*   Created: 2025/11/04 09:21:31 by anezka            #+#    #+#             */
+/*   Updated: 2025/11/04 14:54:45 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANB_HPP
-#define HUMANBs_HPP
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-#include "HumanA.hpp"
+#include <iostream>
+#include <string>
 
-//cannot use reference if i dont have value immediately and want add it later on
-//using pointer
-class HumanB{
+class Fixed{
     private:
-        std::string _name;
-        Weapon*     _weapon;
+        int _value;
+        static const int _bits = 8;
     public:
-        HumanB();
-        HumanB(std::string name);
-        ~HumanB();
-        void attack(void) const;
-        void setWeapon(Weapon& weapon);
+        Fixed();
+        Fixed(const Fixed &orig);
+        Fixed &operator=(const Fixed &orig);
+        ~Fixed();
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
 };
 
 #endif

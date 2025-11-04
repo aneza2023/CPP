@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 22:51:36 by anezka            #+#    #+#             */
-/*   Updated: 2025/10/24 13:39:18 by anezka           ###   ########.fr       */
+/*   Created: 2025/11/04 14:52:23 by anezka            #+#    #+#             */
+/*   Updated: 2025/11/04 15:32:45 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-#define WEAPON_HPP
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <string>
 
-class Weapon{
+class Fixed{
     private:
-        std::string _type;
+        int _value;
+        static const int _bits = 8;
     public:
-        Weapon();
-        Weapon(std::string type);
-        ~Weapon();
-        std::string getType(void) const;
-        void setType(std::string type);
+        Fixed();
+        Fixed(int intValue);
+        Fixed(float floatValue);
+        Fixed(const int value);
+        Fixed(const Fixed &orig);
+        Fixed &operator=(const Fixed &orig);
+        ~Fixed();
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+        float toFloat(void) const;
+        int toInt(void) const;
 };
 
 #endif

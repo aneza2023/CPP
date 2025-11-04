@@ -6,7 +6,7 @@
 /*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:56:36 by anezka            #+#    #+#             */
-/*   Updated: 2025/10/29 11:54:13 by anezka           ###   ########.fr       */
+/*   Updated: 2025/10/29 15:06:23 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <string>
 #include <bits/stdc++.h>
 
+//maybe add message if not found
+//close files afterwards
 int main(int argc, char *argv[])
 {
     if (argc != 4){

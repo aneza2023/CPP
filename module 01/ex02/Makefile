@@ -6,19 +6,17 @@
 #    By: anezka <anezka@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/22 13:30:13 by anezka            #+#    #+#              #
-#    Updated: 2025/10/22 13:31:30 by anezka           ###   ########.fr        #
+#    Updated: 2025/10/29 12:08:17 by anezka           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = brainz
+NAME = ex02
 SRC = main.cpp\
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-#VAL_FLAGS = -fsanitize=address,undefined -g
 CPP_FLAGS = -std=c++98
-#LIBS = s
 
 all: $(NAME)
 
