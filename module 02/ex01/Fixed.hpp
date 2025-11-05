@@ -6,7 +6,7 @@
 /*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 14:52:23 by anezka            #+#    #+#             */
-/*   Updated: 2025/11/04 15:32:45 by anezka           ###   ########.fr       */
+/*   Updated: 2025/11/04 17:15:19 by anezka           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Fixed{
         static const int _bits = 8;
     public:
         Fixed();
-        Fixed(int intValue);
         Fixed(float floatValue);
         Fixed(const int value);
         Fixed(const Fixed &orig);
         Fixed &operator=(const Fixed &orig);
+        // std::string &operator<<(const Fixed &orig);
         ~Fixed();
         int getRawBits(void) const;
         void setRawBits(int const raw);
