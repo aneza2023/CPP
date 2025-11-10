@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/01 10:34:58 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/23 14:13:20 by anezka           ###   ########.fr       */
+/*   Updated: 2025/11/10 13:58:45 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,17 +106,47 @@ Contact Contact:: addContactData(void)
 {
     Contact a;
 
-    std::cout << "Provide contact details:" << std:: endl;
-    std::cout << "First name:" << std:: endl;
-    std::cin >> a._firstName;
-    std::cout << "Last name:" << std:: endl;
-    std::cin >> a._lastName;
-    std::cout << "Nickname:" << std:: endl;
-    std::cin >> a._nickname;
-    std::cout << "Phone number:" << std:: endl;
-    std::cin >> a._phoneNum;
-    std::cout << "Darkest secret" << std:: endl;
-    std:: cin >> a._darkSecret;
-    std::cout << "Adding contact complete.\n";
+    std::cout << "First name: "; 
+    std::cin.ignore();
+    std::getline(std::cin, a._firstName);
+    if (std::cin.eof())
+        exit(EOF);
+    while (a._firstName.empty()){
+        std::cout << "\nContact information needs to be filed.\n" << "First name: ";
+        std::getline(std::cin, a._firstName);
+    }
+    std::cout << "Last name: ";
+    std::getline(std::cin, a._lastName);
+    if (std::cin.eof())
+        exit(EOF);
+    while (a._lastName.empty()){
+        std::cout << "\nContact information needs to be filed.\n" << "Last name: ";
+        std::getline(std::cin, a._lastName);
+    }
+    std::cout << "Nickname: ";
+    std::getline(std::cin, a._nickname);
+    if (std::cin.eof())
+        exit(EOF);
+    while (a._nickname.empty()){
+        std::cout << "\nContact information needs to be filed.\n" << "Nickname: ";
+        std::getline(std::cin, a._nickname);
+    }
+    std::cout << "Phone number: ";
+    std::getline(std::cin, a._phoneNum);
+    if (std::cin.eof())
+        exit(EOF);
+    while (a._phoneNum.empty()){
+        std::cout << "\nContact information needs to be filed.\n" << "Phone number: ";
+        std::getline(std::cin, a._phoneNum);
+    }
+    std::cout << "Darkest secret: ";
+    std::getline(std::cin, a._darkSecret);
+    if (std::cin.eof())
+        exit(EOF);
+    while (a._darkSecret.empty()){
+        std::cout << "\nContact information needs to be filed.\n" << "Darkest secret: ";
+        std::getline(std::cin, a._darkSecret);
+    }
+    std::cout << "\nAdding contact complete.\n\n";
     return (a);
 }
