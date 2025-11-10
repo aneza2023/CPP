@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
+/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 08:48:16 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/23 14:14:25 by anezka           ###   ########.fr       */
+/*   Updated: 2025/11/05 16:53:28 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ int PhoneBook::checkContactPresent(void)
 PhoneBook::PhoneBook(void)
 {
     for (int i = 0; i < 8; i++){
-    _Contacts[i].setIndex();
-    _Contacts[i].setFirstName();
-    _Contacts[i].setLastName();
-    _Contacts[i].setNickname();
-    _Contacts[i].setPhoneNum();
-    _Contacts[i].setDarkSecret();
+        _Contacts[i].setIndex();
+        _Contacts[i].setFirstName();
+        _Contacts[i].setLastName();
+        _Contacts[i].setNickname();
+        _Contacts[i].setPhoneNum();
+        _Contacts[i].setDarkSecret();
     }
 }
 
