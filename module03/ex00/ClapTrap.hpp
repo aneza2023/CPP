@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/29 10:55:53 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/05 16:53:18 by anezkahavra      ###   ########.fr       */
+/*   Created: 2025/11/10 15:26:34 by anezkahavra       #+#    #+#             */
+/*   Updated: 2025/11/10 15:29:29 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP    
 
 #include <iostream>
 #include <string>
 
-int main(int argc, char *argv[]){
-    if (argc == 1)
-        std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    for (int index = 1; index < argc; index++){
-        std:: string origString(argv[index]);
-        for (int i = 0; i < origString.length(); i++){
-            std:: cout << (char)toupper(origString[i]);
-        }
-        if (index + 1 != argc)
-            std:: cout << " ";
-    }
-    std::cout << std::endl;
-    return 0;
-}
+class ClapTrap {
+    private:
+        std::string _name;
+        int         _hitPoints;
+        int         _energyPoints;
+        int         _attackDmg;
+    public:
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+};
+
+#endif

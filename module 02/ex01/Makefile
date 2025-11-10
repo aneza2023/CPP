@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anezka <anezka@student.42.fr>              +#+  +:+       +#+         #
+#    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/04 14:50:36 by anezka            #+#    #+#              #
-#    Updated: 2025/11/04 15:16:39 by anezka           ###   ########.fr        #
+#    Updated: 2025/11/05 16:54:38 by anezkahavra      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) $(OBJ) -o $(NAME)
 
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) -c $< -o $@
 
 

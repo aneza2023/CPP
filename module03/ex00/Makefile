@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/10/07 15:52:04 by anezkahavra       #+#    #+#              #
-#    Updated: 2025/11/05 16:53:41 by anezkahavra      ###   ########.fr        #
+#    Created: 2025/11/10 15:26:21 by anezkahavra       #+#    #+#              #
+#    Updated: 2025/11/10 15:26:23 by anezkahavra      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex01
+
+
+NAME = ex00
 SRC = main.cpp\
-		zombie.cpp\
-		zombieHorde.cpp
+		ClapTrap.cpp
+		
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror
-#VAL_FLAGS = -fsanitize=address,undefined -g
 CPP_FLAGS = -std=c++98
-#LIBS = s
 
 all: $(NAME)
 
