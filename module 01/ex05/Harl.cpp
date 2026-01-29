@@ -28,30 +28,16 @@ void Harl::error(void){
     std::cout << "This is unacceptable! I want to speak to the manager now.\n";
 }
 
-void Harl::complain(std::string level){
-    void (Harl::*ptr)();
+void Harl::complain(std::string level)
+{
+    void (Harl::*ptr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string defLevel[4] = {"debug", "info", "warning", "error"};
-    int i = 0;
-    while (i < 4 && level.compare(defLevel[i]) != 0)
-        i++;
-    switch (i){
-        case 0:
-            ptr = &Harl::debug;
-            break;
-        case 1:
-            ptr = &Harl::info;
-            break;
-        case 2:
-            ptr = &Harl::warning;
-            break;
-        case 3:
-            ptr = &Harl::error;
-            break;
-        default:
+    for(int i = 0; i < 4; i++)
+    {
+        if (defLevel[i] == level)
         {
-            std::cout << level << ": complain not valid\n";
+            (this->*ptr[i])();
             return ;
         }
     }
-    (this->*(ptr))();
 }
