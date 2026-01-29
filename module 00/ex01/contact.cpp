@@ -15,7 +15,7 @@
 void Contact::setFirstName(){
         _firstName = "";
 }
-void Contact::setFirstName(std::string& value){
+void Contact::setFirstName(const std::string& value){
     if (!value.empty()){
         _firstName = value;
     }
@@ -25,7 +25,7 @@ void Contact::setLastName(void){
         _lastName = "";
 }
 
-void Contact::setLastName(std::string& value){
+void Contact::setLastName(const std::string& value){
     if (!value.empty()){
         _lastName = value;
     }
@@ -35,7 +35,7 @@ void Contact::setNickname(void){
     _nickname = "";
 }
 
-void Contact::setNickname(std::string& value){
+void Contact::setNickname(const std::string& value){
     if (!value.empty()){
       _nickname = value;
     }
@@ -45,7 +45,7 @@ void Contact::setPhoneNum(void){
        _phoneNum = "";
 }
 
-void Contact::setPhoneNum(std::string& value){
+void Contact::setPhoneNum(const std::string& value){
     if (!value.empty()){
        _phoneNum = value;
     }
@@ -55,7 +55,7 @@ void Contact::setDarkSecret(void){
         _darkSecret = "";
 }
 
-void Contact::setDarkSecret(std::string& value){
+void Contact::setDarkSecret(const std::string& value){
     if (!value.empty()){
         _darkSecret = value;
     }
@@ -65,7 +65,7 @@ void Contact::setIndex(void){
     _index = 0;
 }
 
-void Contact::setIndex(int& value){
+void Contact::setIndex(const int& value){
     _index = value;
 }
 
@@ -93,60 +93,39 @@ int Contact::getIndex(void){
     return _index;
 }
 
-std:: string Contact:: checkInputPresent(std:: string input)
+std:: string Contact:: checkInput(std:: string prompt)
 {
-    while (input.empty()){
-        std::cout << "Invalid input. Can't be left blank\n";
-        std::cin >> input;
+    std::string input;
+    while(true)
+    {
+        std::cout << prompt;
+        if (!std::getline(std::cin, input))
+        {
+            std::cout << "\n\nEOF detected. Exiting the phonebook now.\n";
+            exit(0);
+        }
+        if(!input.empty())
+            break;
+        std::cout << "\nField cannot be left empty.\n";
     }
-    return input;   
+    return (input);
 }
 
 Contact Contact:: addContactData(void)
 {
     Contact a;
+    std::string temp;
 
-    std::cout << "First name: "; 
-    std::cin.ignore();
-    std::getline(std::cin, a._firstName);
-    if (std::cin.eof())
-        exit(EOF);
-    while (a._firstName.empty()){
-        std::cout << "\nContact information needs to be filed.\n" << "First name: ";
-        std::getline(std::cin, a._firstName);
-    }
-    std::cout << "Last name: ";
-    std::getline(std::cin, a._lastName);
-    if (std::cin.eof())
-        exit(EOF);
-    while (a._lastName.empty()){
-        std::cout << "\nContact information needs to be filed.\n" << "Last name: ";
-        std::getline(std::cin, a._lastName);
-    }
-    std::cout << "Nickname: ";
-    std::getline(std::cin, a._nickname);
-    if (std::cin.eof())
-        exit(EOF);
-    while (a._nickname.empty()){
-        std::cout << "\nContact information needs to be filed.\n" << "Nickname: ";
-        std::getline(std::cin, a._nickname);
-    }
-    std::cout << "Phone number: ";
-    std::getline(std::cin, a._phoneNum);
-    if (std::cin.eof())
-        exit(EOF);
-    while (a._phoneNum.empty()){
-        std::cout << "\nContact information needs to be filed.\n" << "Phone number: ";
-        std::getline(std::cin, a._phoneNum);
-    }
-    std::cout << "Darkest secret: ";
-    std::getline(std::cin, a._darkSecret);
-    if (std::cin.eof())
-        exit(EOF);
-    while (a._darkSecret.empty()){
-        std::cout << "\nContact information needs to be filed.\n" << "Darkest secret: ";
-        std::getline(std::cin, a._darkSecret);
-    }
-    std::cout << "\nAdding contact complete.\n\n";
+    temp = checkInput("First Name: ");
+    a.setFirstName(temp);
+    temp = checkInput("Last Name: ");
+    a.setLastName(temp);
+    temp = checkInput("Nickname: ");
+    a.setNickname(temp);
+    temp = checkInput("Phone Number: ");
+    a.setPhoneNum(temp);
+    temp = checkInput("Darkest Secret: ");
+    a.setDarkSecret(temp);
+    std::cout << "\nAdding contact complete.\n" << std::endl;
     return (a);
 }

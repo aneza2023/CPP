@@ -28,7 +28,7 @@ class Contact{
         std::string _darkSecret;
         int _index;
 
-        std::string checkInputPresent(std::string input);
+        std::string checkInput(std::string prompt);
 
     public:
         std::string getFirstName(void);
@@ -43,13 +43,13 @@ class Contact{
         void setPhoneNum(void);
         void setDarkSecret(void);
         void setIndex(void);
-        void setFirstName(std::string& value);
-        void setLastName(std::string& value);
-        void setNickname(std::string& value);
-        void setPhoneNum(std::string& value);
-        void setDarkSecret(std::string& value);
-        void setIndex(int &value);
-        Contact addContactData(void); 
+        void setFirstName(const std::string& value);
+        void setLastName(const std::string& value);
+        void setNickname(const std::string& value);
+        void setPhoneNum(const std::string& value);
+        void setDarkSecret(const std::string& value);
+        void setIndex(const int &value);
+        Contact addContactData(void);
 };
 
 #endif

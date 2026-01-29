@@ -39,7 +39,7 @@ std::string PhoneBook::truncateforDisplay(std::string origString)
 {
     std::string truncString;
 
-    if (origString.length() >= 10){
+    if (origString.length() > 10){
         truncString = origString.substr(0, 9);
         truncString += ".";
     }
@@ -48,11 +48,14 @@ std::string PhoneBook::truncateforDisplay(std::string origString)
     return truncString;
 }
 
+//cout.width(10) maybe use setw(10)
+//#include <iomanip>
 void PhoneBook::displayContacts()
 {
     for (int i = 0; i < 8; i++)
     {
         if (_Contacts[i].getIndex() != 0){
+            std::cout << "|";
             std::cout.width(10); std::cout << std::right << _Contacts[i].getIndex() << "|";
             std::cout.width(10); std::cout << std::right << truncateforDisplay(_Contacts[i].getFirstName()) << "|";
             std::cout.width(10); std::cout << std::right << truncateforDisplay(_Contacts[i].getLastName()) << "|";
@@ -64,6 +67,7 @@ void PhoneBook::displayContacts()
 
 void PhoneBook::searchContact(void)
 {
+    std::string input;
     int index;
 
     if (checkContactPresent() == 1){
@@ -71,22 +75,27 @@ void PhoneBook::searchContact(void)
         return ;
     }
     std::cout << "\nEnter the index of the contact to display:\n" << std::endl;
-    while (!(std::cin >> index) || _Contacts[index -1].getIndex() == 0){
-        if (std::cin.eof())
-            exit(EOF);
-        std::cout << "\nInvalid input. The index must match an existing contact.\n" << std::endl;
-        std::cin.clear();
-        std::cin.ignore(10000, '\n');
+    if (!std::getline(std::cin, input))
+        return ;
+    if (input.length() == 1 && input[0] >= '1' && input[0] <= '8')
+    {
+        index = input[0] - '0';
+        index = index - 1;
+        if (_Contacts[index].getIndex() != 0)
+        {
+            std::cout << "\nContact information:\n\n";
+            std::cout << std::right << _Contacts[index].getIndex() << std::endl;
+            std::cout << std::right << _Contacts[index].getFirstName() << std::endl;
+            std::cout << std::right << _Contacts[index].getLastName() << std::endl;
+            std::cout << std::right << _Contacts[index].getNickame() << std::endl;
+            std::cout << std::right << _Contacts[index].getPhoneNum() << std::endl;
+            std::cout << std::right << _Contacts[index].getDarkSecret() << std::endl;
+            std::cout << "\nDisplaying contact complete.\n\n";
+            return ;
+        }
     }
-    index = index - 1;
-    std::cout << "\nContact information:\n\n";
-    std::cout << std::right << _Contacts[index].getIndex() << std::endl;
-    std::cout << std::right << _Contacts[index].getFirstName() << std::endl;
-    std::cout << std::right << _Contacts[index].getLastName() << std::endl;
-    std::cout << std::right << _Contacts[index].getNickame() << std::endl;
-    std::cout << std::right << _Contacts[index].getPhoneNum() << std::endl;
-    std::cout << std::right << _Contacts[index].getDarkSecret() << std::endl;
-    std::cout << "\nDisplaying contact complete.\n";
+    std::cout << "Invalid input. The index must match an existing contact (1-8).\n" << std::endl;
+    searchContact();
 }
 
 void PhoneBook::addContact(Contact newContact)
