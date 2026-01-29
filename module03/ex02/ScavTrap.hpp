@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 09:21:41 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/12 14:21:44 by anezkahavra      ###   ########.fr       */
+/*   Created: 2025/11/12 14:39:35 by anezkahavra       #+#    #+#             */
+/*   Updated: 2025/11/22 14:53:00 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
+#include <iostream>
+#include <string>
+
 #include "ClapTrap.hpp"
 
-int main(void)
-{
-    std::string nameRob = "Robert";
-    std::string nameJul = "Julia";
-    ClapTrap Robert(nameRob);
-    ClapTrap Julia(nameJul);
+//should also orthodox canonical form? attack changes only
+class ScavTrap: public ClapTrap{
+    public:
+        ScavTrap(std::string name);
+        ~ScavTrap();
+        void guardGate();
+};
 
-    while (1){
-        if (Julia.getEnergyPts() <= 0 || Julia.getHitPoints() <= 0)
-            break;
-        Robert.attack(Julia.getName());
-        Julia.takeDamage(1);
-        Robert.beRepaired(1);
-    }
-    return (0);
-}
+#endif

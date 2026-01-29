@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 09:21:41 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/12 14:21:44 by anezkahavra      ###   ########.fr       */
+/*   Created: 2025/11/22 14:48:40 by anezkahavra       #+#    #+#             */
+/*   Updated: 2025/11/22 15:01:14 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP    
 
-int main(void)
-{
-    std::string nameRob = "Robert";
-    std::string nameJul = "Julia";
-    ClapTrap Robert(nameRob);
-    ClapTrap Julia(nameJul);
+#include "ScavTrap.hpp"
 
-    while (1){
-        if (Julia.getEnergyPts() <= 0 || Julia.getHitPoints() <= 0)
-            break;
-        Robert.attack(Julia.getName());
-        Julia.takeDamage(1);
-        Robert.beRepaired(1);
-    }
-    return (0);
-}
+class FragTrap : public ClapTrap{
+    public:
+        FragTrap(std::string name);
+        ~FragTrap();
+        void highFiveGuys(void);
+};
+
+#endif

@@ -6,19 +6,25 @@
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/10 15:26:30 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/22 15:22:26 by anezkahavra      ###   ########.fr       */
+/*   Updated: 2025/11/22 15:31:28 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string &name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDmg(0)
+ClapTrap::ClapTrap() : _name(""), _hitPoints(10), _energyPoints(10), _attackDmg(0)
 {
-    std::cout << "ClapTrap constructor called\n";
+    std::cout << "ClapTrap " << this->_name << " constructor called\n";
 }
 
-ClapTrap::ClapTrap(const ClapTrap &orig) : _name(orig._name), _hitPoints(orig._hitPoints), _energyPoints(orig._energyPoints), _attackDmg(orig._attackDmg)
+ClapTrap::ClapTrap(std::string &name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDmg(0)
 {
+    std::cout << "ClapTrap " << this->_name << " constructor called\n";
+}
+
+ClapTrap::ClapTrap(const ClapTrap &orig) :  _hitPoints(orig._hitPoints), _energyPoints(orig._energyPoints), _attackDmg(orig._attackDmg)
+{
+    this->_name = orig._name + " copy";
     std::cout << "Copy constructor called for " << orig._name << std::endl;
 }
 
@@ -36,7 +42,7 @@ ClapTrap &ClapTrap:: operator=(const ClapTrap &orig)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Deconstructor called\n";
+    std::cout << "ClapTrap " << this->_name << " deconstructor called\n";
 }
 
 void ClapTrap::attack(const std::string& target)
@@ -85,4 +91,19 @@ int ClapTrap::getEnergyPts(void)
 int ClapTrap::getHitPoints(void)
 {
     return this->_hitPoints;
+}
+
+void ClapTrap::setEnergyPts(int nb)
+{
+    this->_energyPoints = nb;
+}
+
+void ClapTrap::setHitPts(int nb)
+{
+    this->_hitPoints = nb;
+}
+
+void ClapTrap::setAttackDmg(int nb)
+{
+    this->_attackDmg = nb;
 }

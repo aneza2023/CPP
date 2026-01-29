@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 09:21:41 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/12 14:21:44 by anezkahavra      ###   ########.fr       */
+/*   Created: 2025/11/12 14:39:38 by anezkahavra       #+#    #+#             */
+/*   Updated: 2025/11/22 14:07:46 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main(void)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::string nameRob = "Robert";
-    std::string nameJul = "Julia";
-    ClapTrap Robert(nameRob);
-    ClapTrap Julia(nameJul);
-
-    while (1){
-        if (Julia.getEnergyPts() <= 0 || Julia.getHitPoints() <= 0)
-            break;
-        Robert.attack(Julia.getName());
-        Julia.takeDamage(1);
-        Robert.beRepaired(1);
-    }
-    return (0);
+    std::cout << "ScavTrap constructor called\n";
+    this->setHitPts(100);
+    this->setEnergyPts(50);
+    this->setAttackDmg(20);
 }
+
+void ScavTrap::guardGate(void)
+{
+    std::cout << "ScavTrap has now in Gate keeping mode\n";
+}
+
+ScavTrap::~ScavTrap(void)
+{
+    std::cout << "ScavTrap deconstructor called\n";
+}
+

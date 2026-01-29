@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 09:21:41 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/12 14:21:44 by anezkahavra      ###   ########.fr       */
+/*   Created: 2025/11/22 14:53:23 by anezkahavra       #+#    #+#             */
+/*   Updated: 2025/11/22 14:57:26 by anezkahavra      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
-int main(void)
+FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-    std::string nameRob = "Robert";
-    std::string nameJul = "Julia";
-    ClapTrap Robert(nameRob);
-    ClapTrap Julia(nameJul);
+    std::cout << "FragTrap constructor called\n";
+    this->setHitPts(100);
+    this->setEnergyPts(100);
+    this->setAttackDmg(30);
+}
 
-    while (1){
-        if (Julia.getEnergyPts() <= 0 || Julia.getHitPoints() <= 0)
-            break;
-        Robert.attack(Julia.getName());
-        Julia.takeDamage(1);
-        Robert.beRepaired(1);
-    }
-    return (0);
+void FragTrap::highFiveGuys(void)
+{
+    std::cout << "FragTrap requests high five\n";
 }
