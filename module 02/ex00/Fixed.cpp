@@ -40,12 +40,11 @@ Fixed::~Fixed(void)
 int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called\n";
-    int raw = this->_value * 256.0;
-    return raw;
+    return this->_value;
 }
 
 void Fixed::setRawBits(int const raw)
 {
     std::cout << "setRawBits member function called\n";
-    this->_value = raw / 256.0;
+    this->_value = raw;
 }

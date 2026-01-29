@@ -12,7 +12,7 @@
 
 NAME = ex01
 SRC = main.cpp\
-		zombie.cpp\
+		Zombie.cpp\
 		zombieHorde.cpp
 
 OBJ = $(SRC:.cpp=.o)

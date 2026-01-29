@@ -1,0 +1,9 @@
+module 00 ex 01
+should i use
+//cout.width(10) maybe use setw(10)
+//#include <iomanip>
+the subject mentioned iomanip, not written its mandatory
+
+module 01 ex03
+should i change the constructor to accept _name straigt away?
+
