@@ -89,7 +89,7 @@ std::string Contact::getDarkSecret(void){
     return _darkSecret;
 }
 
-int:: Contact::getIndex(void){
+int Contact::getIndex(void){
     return _index;
 }
 

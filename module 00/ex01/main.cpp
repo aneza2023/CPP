@@ -21,7 +21,9 @@ int main(void)
     std::cout << "Enter ADD, SEARCH or EXIT to use the phonebook:\n" << std::endl;
     while (1){
         signal(SIGQUIT, SIG_IGN);
-        std:: cin >> command;
+        // std:: cin >> command;
+        if(!std::getline(std::cin, command))
+            break;
         if (std::cin.eof())
             break;
         if (command == "ADD"){

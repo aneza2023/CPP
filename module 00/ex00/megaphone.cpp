@@ -18,7 +18,7 @@ int main(int argc, char *argv[]){
         std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
     for (int index = 1; index < argc; index++){
         std:: string origString(argv[index]);
-        for (int i = 0; i < origString.length(); i++){
+        for (int i = 0; i < (int)origString.length(); i++){
             std:: cout << (char)toupper(origString[i]);
         }
         if (index + 1 != argc)
