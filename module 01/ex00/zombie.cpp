@@ -17,7 +17,7 @@ Zombie::Zombie(void) : _name(""){}
 Zombie::Zombie(std::string name) : _name(name) {}
 
 Zombie::~Zombie(void){
-    std::cout << this->_name << "is being destroyed" << std:: endl;
+    std::cout << this->_name << " is being destroyed" << std:: endl;
 }
 
 void Zombie::announce(void) const{
@@ -30,7 +30,7 @@ std::string Zombie::getName(void) const{
     return this->_name;
 }
 
-void Zombie::setName(std::string& name){
+void Zombie::setName(const std::string& name){
     if (!name.empty()){
         this->_name = name;
     }
