@@ -28,11 +28,10 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) -c $< -o $@
 
-
 clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)s
+	rm -f $(NAME)
 
 re: fclean all

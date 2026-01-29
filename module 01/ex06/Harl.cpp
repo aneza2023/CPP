@@ -37,10 +37,9 @@ void Harl::complain(std::string level){
     {
         case 0:
             std::cout << "[ DEBUG ]" << std::endl;
-            // (this->*ptr[0])(); // You can call logic here
             this->debug();
             std::cout << std::endl;
-            /* fallthrough */ // <--- Use this exact C-style comment
+            /* fallthrough */ 
         case 1:
             std::cout << "[ INFO ]" << std::endl;
             this->info();

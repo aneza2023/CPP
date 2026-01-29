@@ -7,3 +7,6 @@ the subject mentioned iomanip, not written its mandatory
 module 01 ex03
 should i change the constructor to accept _name straigt away?
 
+modele 02
+look more at it
+the operator<< syntax, why global (not ok according to ther subject)

@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie* zombieHorde(int N, std::string name){
-    Zombie* zombieHorde1 = new Zombie[N];
+    Zombie* horde = new Zombie[N];
     for(int i = 0; i < N; i++){
-        zombieHorde1[i].setName(name);
+        horde[i].setName(name);
     }
-    return zombieHorde1;
+    return horde;
 }
