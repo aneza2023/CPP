@@ -12,8 +12,7 @@
 
 NAME = harlfilter
 SRC = main.cpp\
-		Harl.cpp\
-		
+		Harl.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
@@ -33,6 +32,6 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)s
+	rm -f $(NAME)
 
 re: fclean all

@@ -29,44 +29,34 @@ void Harl::error(void){
 }
 
 void Harl::complain(std::string level){
-    void (Harl::*ptr)();
     std::string defLevel[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
     int i = 0;
     while (i < 4 && level.compare(defLevel[i]) != 0)
         i++;
-    switch (i){
+    switch (i) 
+    {
         case 0:
-        {
-            std::cout << "[ " << defLevel[0] <<  " ]" << std::endl;
-            ptr = &Harl::debug;
-            (this->*(ptr))();
+            std::cout << "[ DEBUG ]" << std::endl;
+            // (this->*ptr[0])(); // You can call logic here
+            this->debug();
             std::cout << std::endl;
-        }
+            /* fallthrough */ // <--- Use this exact C-style comment
         case 1:
-        {      
-            std::cout << "[ " << defLevel[1] <<  " ]" << std::endl;      
-            ptr = &Harl::info;
-            (this->*(ptr))();
+            std::cout << "[ INFO ]" << std::endl;
+            this->info();
             std::cout << std::endl;
-        }
+            /* fallthrough */
         case 2:
-        {
-            std::cout << "[ " << defLevel[2] <<  " ]" << std::endl;
-            ptr = &Harl::warning;
-            (this->*(ptr))();
+            std::cout << "[ WARNING ]" << std::endl;
+            this->warning();
             std::cout << std::endl;
-        } 
+            /* fallthrough */
         case 3:
-        {
-            std::cout << "[ " << defLevel[3] <<  " ]" << std::endl;
-            ptr = &Harl::error;
-            (this->*(ptr))();
-            break ;
-        }
+            std::cout << "[ ERROR ]" << std::endl;
+            this->error();
+            std::cout << std::endl;
+            break;
         default:
-        {
-            std::cout << "[Probably complaining about insignificant problems ]\n";
-            return ;
-        }
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
 }
