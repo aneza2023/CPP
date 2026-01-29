@@ -25,7 +25,7 @@ Weapon::~Weapon(void){
     // std::cout << "deconstructed " << this->_type << std::endl;
 }
 
-std::string Weapon::getType(void) const{
+const std::string& Weapon::getType(void) const{
     return this->_type;
 }
 
