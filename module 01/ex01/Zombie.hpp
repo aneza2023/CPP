@@ -1,22 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 15:51:58 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/22 13:31:15 by anezka           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
 #include <iostream>
 #include <string>
 
-class Zombie{
+class Zombie {
     private:
         std::string _name;
     public:

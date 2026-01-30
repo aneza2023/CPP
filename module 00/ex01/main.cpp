@@ -1,19 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 10:39:16 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/10 14:08:40 by anezkahavra      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "phonebook.hpp"
 
-int main(void)
-{
+int main(void) {
     std::string command; 
     PhoneBook phonebook;
 

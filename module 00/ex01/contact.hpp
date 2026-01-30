@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 10:30:51 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/10/23 14:13:23 by anezka           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -19,7 +7,7 @@
 #include <cstdio>
 #include <csignal>
 
-class Contact{
+class Contact {
     private:
         std::string _firstName;
         std::string _lastName;

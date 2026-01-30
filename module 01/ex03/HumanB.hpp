@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 22:51:12 by anezka            #+#    #+#             */
-/*   Updated: 2025/10/24 14:51:29 by anezka           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef HUMANB_HPP
-#define HUMANBs_HPP
+#define HUMANB_HPP
 
-#include "HumanA.hpp"
+#include "Weapon.hpp"
 
 //cannot use reference if i dont have value immediately and want add it later on
 //using pointer
-class HumanB{
+class HumanB {
     private:
         std::string _name;
         Weapon*     _weapon;

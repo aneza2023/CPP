@@ -1,5 +1,7 @@
-NAME = ex04
-SRC = main.cpp
+NAME = ex02
+SRC = main.cpp\
+		Fixed.cpp
+		
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
@@ -13,7 +15,6 @@ $(NAME): $(OBJ)
 
 %.o: %.cpp
 	$(CC) $(FLAGS) $(CPP_FLAGS)  -c $< -o $@
-
 
 clean:
 	rm -f $(OBJ)

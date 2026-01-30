@@ -1,33 +1,18 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezka <anezka@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 14:56:36 by anezka            #+#    #+#             */
-/*   Updated: 2025/10/29 15:06:23 by anezka           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <fstream>
 #include <string>
 
-//maybe add message if not found
-//close files afterwards
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     if (argc != 4){
         std::cerr << "Error. Arguments are incorrect.\n";
         return 1;
     }
     std::string filename(argv[1]);
     std::string s1(argv[2]);
-    // if (s1.empty()){
-    //     std:cerr << "S1 cannot be empty\n";
-    //     return 1;
-    // }
+    if (s1.empty()){
+        std:cerr << "S1 cannot be empty\n";
+        return 1;
+    }
     std::string s2(argv[3]);
     std::ifstream inputFile(filename.c_str());
     if (!inputFile.is_open())

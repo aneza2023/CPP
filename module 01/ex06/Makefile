@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/03 13:50:07 by anezka            #+#    #+#              #
-#    Updated: 2025/11/05 16:54:23 by anezkahavra      ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = harlfilter
 SRC = main.cpp\
 		Harl.cpp
@@ -22,10 +10,10 @@ CPP_FLAGS = -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(CPP_FLAGS)  $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) -c $< -o $@
+	$(CC) $(FLAGS) $(CPP_FLAGS)  -c $< -o $@
 
 
 clean:

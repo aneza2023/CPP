@@ -1,19 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 08:48:16 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/10 14:07:11 by anezkahavra      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "phonebook.hpp"
 
-int PhoneBook::checkContactPresent(void)
-{
+int PhoneBook::checkContactPresent(void) {
     int i;
     
     for (i = 0; i < 8; i++){
@@ -23,8 +10,7 @@ int PhoneBook::checkContactPresent(void)
     return 1;
 }
 
-PhoneBook::PhoneBook(void)
-{
+PhoneBook::PhoneBook(void) {
     for (int i = 0; i < 8; i++){
         _Contacts[i].setIndex();
         _Contacts[i].setFirstName();
@@ -35,8 +21,7 @@ PhoneBook::PhoneBook(void)
     }
 }
 
-std::string PhoneBook::truncateforDisplay(std::string origString)
-{
+std::string PhoneBook::truncateforDisplay(std::string origString) {
     std::string truncString;
 
     if (origString.length() > 10){
@@ -50,8 +35,7 @@ std::string PhoneBook::truncateforDisplay(std::string origString)
 
 //cout.width(10) maybe use setw(10)
 //#include <iomanip>
-void PhoneBook::displayContacts()
-{
+void PhoneBook::displayContacts() {
     for (int i = 0; i < 8; i++)
     {
         if (_Contacts[i].getIndex() != 0){
@@ -65,8 +49,7 @@ void PhoneBook::displayContacts()
     }
 }
 
-void PhoneBook::searchContact(void)
-{
+void PhoneBook::searchContact(void) {
     std::string input;
     int index;
 
@@ -98,8 +81,7 @@ void PhoneBook::searchContact(void)
     searchContact();
 }
 
-void PhoneBook::addContact(Contact newContact)
-{
+void PhoneBook::addContact(Contact newContact) {
     static int i;
     int index_nb;
 

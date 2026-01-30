@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/01 10:34:58 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/10 13:58:45 by anezkahavra      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "contact.hpp"
 
-void Contact::setFirstName(){
+void Contact::setFirstName() {
         _firstName = "";
 }
 void Contact::setFirstName(const std::string& value){
@@ -21,80 +9,79 @@ void Contact::setFirstName(const std::string& value){
     }
 }
 
-void Contact::setLastName(void){
+void Contact::setLastName(void) {
         _lastName = "";
 }
 
-void Contact::setLastName(const std::string& value){
+void Contact::setLastName(const std::string& value) {
     if (!value.empty()){
         _lastName = value;
     }
 }
 
-void Contact::setNickname(void){
+void Contact::setNickname(void) {
     _nickname = "";
 }
 
-void Contact::setNickname(const std::string& value){
+void Contact::setNickname(const std::string& value) {
     if (!value.empty()){
       _nickname = value;
     }
 }
 
-void Contact::setPhoneNum(void){
+void Contact::setPhoneNum(void) {
        _phoneNum = "";
 }
 
-void Contact::setPhoneNum(const std::string& value){
+void Contact::setPhoneNum(const std::string& value) {
     if (!value.empty()){
        _phoneNum = value;
     }
 }
 
-void Contact::setDarkSecret(void){
+void Contact::setDarkSecret(void) {
         _darkSecret = "";
 }
 
-void Contact::setDarkSecret(const std::string& value){
+void Contact::setDarkSecret(const std::string& value) {
     if (!value.empty()){
         _darkSecret = value;
     }
 }
 
-void Contact::setIndex(void){
+void Contact::setIndex(void) {
     _index = 0;
 }
 
-void Contact::setIndex(const int& value){
+void Contact::setIndex(const int& value) {
     _index = value;
 }
 
-std::string Contact::getFirstName(void){
+std::string Contact::getFirstName(void) {
     return _firstName;
 }
 
-std::string Contact::getLastName(void){
+std::string Contact::getLastName(void) {
     return _lastName;
 }
 
-std::string Contact::getNickame(void){
+std::string Contact::getNickame(void) {
     return _nickname;
 }
 
-std::string Contact::getPhoneNum(void){
+std::string Contact::getPhoneNum(void) {
     return _phoneNum;
 }
 
-std::string Contact::getDarkSecret(void){
+std::string Contact::getDarkSecret(void) {
     return _darkSecret;
 }
 
-int Contact::getIndex(void){
+int Contact::getIndex(void) {
     return _index;
 }
 
-std:: string Contact:: checkInput(std:: string prompt)
-{
+std:: string Contact:: checkInput(std:: string prompt) {
     std::string input;
     while(true)
     {
@@ -111,8 +98,7 @@ std:: string Contact:: checkInput(std:: string prompt)
     return (input);
 }
 
-Contact Contact:: addContactData(void)
-{
+Contact Contact:: addContactData(void) {
     Contact a;
     std::string temp;
 
