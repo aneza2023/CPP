@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/12 14:39:35 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/22 15:31:27 by anezkahavra      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
@@ -21,7 +9,7 @@
 //should be also orthodox canonical form or if derivate not needed
 //attack changes only??
 
-class ScavTrap: public ClapTrap{
+class ScavTrap: public ClapTrap {
     public:
         ScavTrap();
         ScavTrap(std::string name);

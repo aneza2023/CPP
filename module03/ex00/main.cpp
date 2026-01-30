@@ -1,19 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 09:21:41 by anezkahavra       #+#    #+#             */
-/*   Updated: 2025/11/12 14:21:44 by anezkahavra      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "ClapTrap.hpp"
 
-int main(void)
-{
+int main(void) {
     std::string nameRob = "Robert";
     std::string nameJul = "Julia";
     ClapTrap Robert(nameRob);

@@ -1,21 +1,6 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: anezkahavrankova <anezkahavrankova@stud    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/11/10 15:26:21 by anezkahavra       #+#    #+#              #
-#    Updated: 2025/11/10 15:26:23 by anezkahavra      ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-
-
 NAME = ex00
 SRC = main.cpp\
 		ClapTrap.cpp
-		
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
@@ -25,11 +10,10 @@ CPP_FLAGS = -std=c++98
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(CPP_FLAGS)  $(OBJ) -o $(NAME)
 
 %.o: %.cpp
-	$(CC) $(FLAGS) $(CPP_FLAGS) $(VAL_FLAGS) -c $< -o $@
-
+	$(CC) $(FLAGS) $(CPP_FLAGS)  -c $< -o $@
 
 clean:
 	rm -f $(OBJ)
