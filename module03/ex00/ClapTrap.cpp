@@ -28,8 +28,14 @@ ClapTrap::~ClapTrap() {
 }
 
 void ClapTrap::attack(const std::string& target) {
-    if (this->_energyPoints <= 0 || this->_hitPoints <= 0)
+    if (this->_energyPoints <= 0) {
+        std::cout << "ClapTrap " << this->_name << " has no energy points.\n";
         return ;
+    } 
+    if (this->_hitPoints <= 0) {
+        std::cout << "ClapTrap " << this->_name << " has no hit points.\n";
+        return ;
+    }
     this->_energyPoints--;
     std::cout << "ClapTrap " << this->_name << " attacks " << target << ", causing " << _attackDmg << " points of damage!\n";
     // std::cout << "There is " << this->_energyPoints << " energy points left\n\n";
