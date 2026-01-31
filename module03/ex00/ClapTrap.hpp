@@ -11,17 +11,18 @@ class ClapTrap {
         int         _energyPoints;
         int         _attackDmg;
     public:
-        ClapTrap(std::string &name);
+        ClapTrap();
+        ClapTrap(const std::string &name);
         ClapTrap(const ClapTrap &orig);
         ClapTrap &operator=(const ClapTrap &orig);
         ~ClapTrap();
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        std::string getName(void);
-        int getHitPoints(void);
-        int getEnergyPts(void);
-        void setName(std::string &name);
+        std::string getName(void) const;
+        int getHitPoints(void) const;
+        int getEnergyPts(void) const;
+        void setName(const std::string &name);
 };
 
 #endif
