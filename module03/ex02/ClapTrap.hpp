@@ -5,26 +5,24 @@
 #include <string>
 
 class ClapTrap {
-    private:
+    protected:
         std::string _name;
         int         _hitPoints;
         int         _energyPoints;
         int         _attackDmg;
     public:
-        ClapTrap(std::string &name);
+        ClapTrap();
+        ClapTrap(const std::string &name);
         ClapTrap(const ClapTrap &orig);
         ClapTrap &operator=(const ClapTrap &orig);
-        ~ClapTrap();
+        virtual ~ClapTrap();
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
-        std::string getName(void);
-        int getHitPoints(void);
-        int getEnergyPts(void);
-        void setName(std::string &name);
-        void setEnergyPts(int nb);
-        void setHitPts(int nb);
-        void setAttackDmg(int nb);
+        std::string getName(void) const;
+        int getHitPoints(void) const;
+        int getEnergyPts(void) const;
+        void setName(const std::string &name);
 };
 
 #endif
