@@ -33,7 +33,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &orig) {
 }
 
 DiamondTrap::~DiamondTrap() {
-    std::cout << "DiamondTrap " << this->_name << " deconstructor called\n";
+    std::cout << "DiamondTrap " << this->_name << " Destructor called\n";
 }
 
 void DiamondTrap::whoAmI() {

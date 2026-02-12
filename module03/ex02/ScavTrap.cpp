@@ -45,5 +45,5 @@ void ScavTrap::attack(const std::string& target) {
 }
 
 ScavTrap::~ScavTrap(void) {
-    std::cout << "ScavTrap " << this->getName() << " deconstructor called\n";
+    std::cout << "ScavTrap " << this->getName() << " Destructor called\n";
 }

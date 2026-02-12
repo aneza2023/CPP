@@ -26,7 +26,7 @@ FragTrap &FragTrap::operator=(const FragTrap &orig) {
 }
 
 FragTrap::~FragTrap(void) {
-    std::cout << "FragTrap " << this->_name << " deconstructor called\n";
+    std::cout << "FragTrap " << this->_name << " Destructor called\n";
 }
 
 void FragTrap::highFivesGuys(void) {
