@@ -12,7 +12,7 @@ Animal::Animal(const Animal &orig) : _type(orig._type) {
     std::cout << "Copy constructor for " << orig._type << " called\n";
 }
 
-Animal &Animal::operator=(const Animal &orig) {
+Animal &Animal:: operator=(const Animal &orig) {
     std::cout << "Copy assignment operator for " << orig._type << " called\n";
     if (this != &orig) {
         this->_type = orig._type;
