@@ -10,7 +10,7 @@ int main(int argc, char *argv[]) {
     std::string filename(argv[1]);
     std::string s1(argv[2]);
     if (s1.empty()){
-        std:cerr << "S1 cannot be empty\n";
+        std::cerr << "S1 cannot be empty\n";
         return 1;
     }
     std::string s2(argv[3]);
