@@ -5,17 +5,11 @@
 #include "WrongCat.hpp"
 
 int main() {
-    // const Animal* j = new Dog(); 
-    // const Animal* i = new Cat();
-    // delete j;
-    // delete i;
-
+    // Animal a; //now wont compile, since non-instantiable
 
     int count = 6;
     Animal* groupA[count];
 
-    // if (count % 2 != 0)
-    //     count--;
     for (int k = 0; k < count / 2; k++) {
         groupA[k] = new Dog();
     }
@@ -25,5 +19,4 @@ int main() {
     for (int m = 0; m < count; m++) {
         delete groupA[m];
     }
-    return 0; 
 }
