@@ -1,18 +1,18 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("undenified animal") {
+AAnimal::AAnimal() : _type("undenified Aanimal") {
     std::cout << "Constructor for " << _type << " called\n";
 }
 
-Animal::Animal(const std::string &type) : _type(type) {
+AAnimal::AAnimal(const std::string &type) : _type(type) {
     std::cout << "Constructor for " << _type << " called\n";
 }
 
-Animal::Animal(const Animal &orig) : _type(orig._type) {
+AAnimal::AAnimal(const AAnimal &orig) : _type(orig._type) {
     std::cout << "Copy constructor for " << orig._type << " called\n";
 }
 
-Animal &Animal:: operator=(const Animal &orig) {
+AAnimal &AAnimal:: operator=(const AAnimal &orig) {
     std::cout << "Copy assignment operator for " << orig._type << " called\n";
     if (this != &orig) {
         this->_type = orig._type;
@@ -20,18 +20,18 @@ Animal &Animal:: operator=(const Animal &orig) {
     return (*this);
 }
 
-Animal::~Animal() {
+AAnimal::~AAnimal() {
     std::cout << "Destructor for " << this->_type << " called\n";
 }
 
-std::string Animal::getType(void) const {
+std::string AAnimal::getType(void) const {
     return this->_type;
 }
 
-void Animal::setType(const std::string &type) {
+void AAnimal::setType(const std::string &type) {
     this->_type = type;
 }
-
-void Animal::makeSound(void) const {
-    std::cout << "Animal makes random sound\n";
-}
+//not needed since virtual
+// void AAnimal::makeSound(void) const {
+//     std::cout << "AAnimal makes random sound\n";
+// }
