@@ -3,6 +3,9 @@
 
 #include "AForm.hpp"
 
+class ShrubberyCreationForm;
+class RobotomyRequestForm;
+class PresidentialPardonForm;
 
 class Intern {
     
@@ -13,6 +16,18 @@ class Intern {
         ~Intern();
 
         AForm* makeForm(std::string formName, std::string target) const;
-}
+        AForm* shrubberyCreation(std::string target) const;
+        AForm* robotomyRequest(std::string target) const;
+        AForm* presidentialPardon(std::string target) const;
+
+        class InternException: public std::exception {
+            private:
+                std::string _msg;
+            public:
+                InternException(std::string msg);
+                virtual ~InternException() throw();
+                virtual const char* what() const throw();
+        };
+};
 
 #endif

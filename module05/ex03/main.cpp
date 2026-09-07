@@ -3,15 +3,29 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main(void) {
     try {
-        Bureaucrat Jana("Jana", 10);
-        Bureaucrat Michal("Michal", 149);
+        Intern someRandomIntern;
+        Bureaucrat b("Bender", 1);
+        AForm* rrf;
+        // AForm* rrr;
 
-        ShrubberyCreationForm form1("home");
-        Jana.signForm(form1);
-        Jana.executeForm(form1);
+        rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+        // rrr = someRandomIntern.makeForm("juchuuuu", "Bender");
+        if (rrf == NULL) {
+            std::cout << "Error: Form was not created" << std::endl;
+            return 1;
+        }
+        std::cout << "--" << std::endl;
+        b.signForm(*rrf);
+        rrf->execute(b);
+        // rrf->execute(b);
+        // b.signForm(*rrr);
+
+        delete rrf;
+        // delete rrr;
     }
     catch (std::exception &e){
         std::cout << e.what() << std::endl;

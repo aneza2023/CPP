@@ -5,6 +5,7 @@ SRC = main.cpp\
 		PresidentialPardonForm.cpp\
 		RobotomyRequestForm.cpp\
 		ShrubberyCreationForm.cpp\
+		Intern.cpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
