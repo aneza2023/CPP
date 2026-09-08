@@ -37,7 +37,7 @@ const char* ShrubberyCreationForm::ShrubberyException::what() const throw() {
     return _msg.c_str();
 }
 
-void ShrubberyCreationForm::executeAction() const {
+void ShrubberyCreationForm::executeAction(Bureaucrat const &executor) const {
     std::string filename = this->_target + "_shrubbery";
     std::ofstream outfile(filename.c_str());
     if (!outfile.is_open())
