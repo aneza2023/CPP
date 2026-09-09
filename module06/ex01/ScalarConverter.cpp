@@ -79,6 +79,7 @@ bool isInputFloat(std::string arg) {
     iss >> std::noskipws >> leftover;
     iss >> std::ws;
     if (iss.eof() && !iss.fail() && leftover == 'f') {
+          std::cout << "HERE2" << std::endl;
         return true;
     }
     return false;
@@ -149,34 +150,9 @@ void printResults(char c, int i, float f, double d) {
     else {
         std::cout << "char: impossible" << std::endl;
     }
-
-    if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max()) {
-        std::cout << "int: " << i << std::endl;
-    } else {
-        std::cout << "int: impossible" << std::endl;
-    }
-
-    if (d < -std::numeric_limits<float>::max() && d > std::numeric_limits<float>::max()) {
-        std::cout << "float: impossible" << std::endl;
-    } else {
-        std::cout << "float: " << f;
-        if (f - static_cast<int>(f) == 0) {
-            std::cout << ".0f" << std::endl;
-        }
-        else
-            std::cout << "f" << std::endl;
-    }
-
-    if (d >= -std::numeric_limits<double>::max() && d <= std::numeric_limits<double>::max()) {
-        std::cout << "double: " << d;
-        if (d - static_cast<int>(d) == 0) {
-            std::cout << ".0" << std::endl;
-        }
-        else
-            std::cout << std::endl;
-    } else {
-        std::cout << "double: impossible" << std::endl;
-    }
+    std::cout << "int: " << i << std::endl;
+    std::cout << "float: " << std::fixed << std::setprecision(1) << f << 'f' <<std::endl;
+    std::cout << "double: " << d << std::endl;
 }
 
 
