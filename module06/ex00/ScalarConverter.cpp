@@ -156,11 +156,11 @@ void printResults(char c, int i, float f, double d) {
         std::cout << "int: impossible" << std::endl;
     }
 
-    if (d < -std::numeric_limits<float>::max() && d > std::numeric_limits<float>::max()) {
+    if (d < -std::numeric_limits<float>::max() || d > std::numeric_limits<float>::max()) {
         std::cout << "float: impossible" << std::endl;
     } else {
         std::cout << "float: " << f;
-        if (f - static_cast<int>(f) == 0) {
+        if (f == std::floor(f)) {
             std::cout << ".0f" << std::endl;
         }
         else
@@ -169,7 +169,7 @@ void printResults(char c, int i, float f, double d) {
 
     if (d >= -std::numeric_limits<double>::max() && d <= std::numeric_limits<double>::max()) {
         std::cout << "double: " << d;
-        if (d - static_cast<int>(d) == 0) {
+        if (d == std::floor(d)) {
             std::cout << ".0" << std::endl;
         }
         else
@@ -215,8 +215,10 @@ void ScalarConverter::convert(std::string arg) {
 
         case TYPE_FLOAT:
             iss >> f;
-            c = static_cast<char>(f);
-            i = static_cast<int>(f);
+            if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max()) {
+                i = static_cast<int>(d);
+                c = static_cast<char>(f);
+            }
             d = static_cast<double>(f);
             printResults(c, i, f, d);
             break;
@@ -231,7 +233,9 @@ void ScalarConverter::convert(std::string arg) {
         case TYPE_DOUBLE:
             iss >> d;
             c = static_cast<char>(d);
-            i = static_cast<int>(d);
+            if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max()) {
+                i = static_cast<int>(d);
+            }
             f = static_cast<float>(d);
             printResults(c, i, f, d);
             break;
