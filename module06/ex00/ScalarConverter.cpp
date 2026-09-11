@@ -140,7 +140,7 @@ InputType detectType(std::string arg) {
 
 void printResults(char c, int i, float f, double d) {
 
-    if (i >= 0 && i <= 127) {
+    if (d >= 0 && d <= 127) {
         if (std::isprint(c))
             std::cout << "char: '" << c << "'" << std::endl;
         else
@@ -215,11 +215,11 @@ void ScalarConverter::convert(std::string arg) {
 
         case TYPE_FLOAT:
             iss >> f;
+            d = static_cast<double>(f);
             if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max()) {
                 i = static_cast<int>(d);
                 c = static_cast<char>(f);
             }
-            d = static_cast<double>(f);
             printResults(c, i, f, d);
             break;
 
@@ -232,9 +232,9 @@ void ScalarConverter::convert(std::string arg) {
 
         case TYPE_DOUBLE:
             iss >> d;
-            c = static_cast<char>(d);
             if (d >= std::numeric_limits<int>::min() && d <= std::numeric_limits<int>::max()) {
                 i = static_cast<int>(d);
+                c = static_cast<char>(d);
             }
             f = static_cast<float>(d);
             printResults(c, i, f, d);
