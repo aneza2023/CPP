@@ -7,9 +7,11 @@
 
 template <typename T>
 class Array {
+    
     private:
         T               *_value;
         unsigned int    _arraySize;
+    
     public:
         Array();
         Array(unsigned int n);
