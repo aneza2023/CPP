@@ -14,7 +14,12 @@ class MutantStack : public std::stack<T> {
         MutantStack& operator=(const MutantStack &orig);
         ~MutantStack();
 
+        typedef typename std::stack<T>::container_type::iterator iterator;
 
+        iterator begin();
+        iterator end();
 };
+
+#include "MutantStack.tpp"
 
 #endif
