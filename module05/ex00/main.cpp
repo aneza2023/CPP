@@ -8,6 +8,7 @@ int main(void) {
         // Bureaucrat Martin("Martin", 0);
         // Bureaucrat David("David", 156);
     }
+    // ADDED!!! maybe just use exception / example in subject
     catch (Bureaucrat::GradeTooHighException &e){
         std::cout << e.what() << std::endl;
     }

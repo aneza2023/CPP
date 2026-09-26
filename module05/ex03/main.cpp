@@ -4,9 +4,14 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
+//ADDED and ex02
+#include <cstlib>
+#include <ctime>
 
 int main(void) {
     try {
+        //ADDED!! and ex02
+        srand(time(NULL));
         Intern someRandomIntern;
         Bureaucrat b("Bender", 1);
         AForm* rrf;
