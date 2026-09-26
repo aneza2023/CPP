@@ -37,13 +37,8 @@ const char* RobotomyRequestForm::RobotomyRequestFormException::what() const thro
 
 void RobotomyRequestForm::executeAction() const {
     std::cout << "Drilling noises..." << std::endl;
-
-    static bool toggle = false;
-    toggle = !toggle;
-
-    //using rand() % 2 
     
-    if (toggle) {
+    if (rand() % 2 ) {
         std::cout << this->_target << " has been robotomized successfully!" << std::endl;
     } else {
         std::cout << "Robotomy failed on " << this->_target << "." << std::endl;

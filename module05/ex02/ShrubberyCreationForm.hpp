@@ -5,15 +5,20 @@
 #include <fstream>
 
 class ShrubberyCreationForm  : public AForm {
+    
     private:
         std::string     _target;
+
+    protected:
+        virtual void executeAction(void) const;
+    
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(const ShrubberyCreationForm &orig);
         ShrubberyCreationForm&operator=(const ShrubberyCreationForm &orig);
-        ~ShrubberyCreationForm();
-        void executeAction(Bureaucrat const &executor) const;
+        virtual ~ShrubberyCreationForm();
+
         class ShrubberyException : public std::exception {
             private:
                 std::string     _msg;
@@ -23,30 +28,5 @@ class ShrubberyCreationForm  : public AForm {
                 virtual const char* what() const throw();
         } ;
 } ;
-
-// class ShrubberyCreationForm  : public AForm {
-    
-//     private:
-//         std::string     _target;
-
-//     protected:
-//         virtual void executeAction(void) const;
-    
-//     public:
-//         ShrubberyCreationForm();
-//         ShrubberyCreationForm(std::string target);
-//         ShrubberyCreationForm(const ShrubberyCreationForm &orig);
-//         ShrubberyCreationForm&operator=(const ShrubberyCreationForm &orig);
-//         virtual ~ShrubberyCreationForm();
-
-//         class ShrubberyException : public std::exception {
-//             private:
-//                 std::string     _msg;
-//             public:
-//                 ShrubberyException(std::string msg);
-//                 virtual ~ShrubberyException() throw();
-//                 virtual const char* what() const throw();
-//         } ;
-// } ;
 
 #endif
