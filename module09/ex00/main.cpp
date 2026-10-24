@@ -4,7 +4,7 @@
 int main(int argc, char* argv[]) {
     
     if (argc != 2) {
-        std::cerr << "Error: Not correct arguments" << std::endl;
+        std::cerr << "Error: Could not open file." << std::endl;
         return 1;
     }
 
