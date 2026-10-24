@@ -4,7 +4,7 @@ btcEx::btcEx() {
 
     std::ifstream database("data.csv");
     if (!database.is_open())
-        throw std::runtime_error("Error: could not open the file with database");
+        throw std::runtime_error("Error: could not open file.");
 
     std::string line;
     std::getline(database, line, '\n');
@@ -47,7 +47,7 @@ bool btcEx::isDateValid(std::string date) {
     if (date[4] != '-' || date[7] != '-')
         return false;
     for (size_t i = 0; i < date.length(); i++) {
-        if (!isdigit(date[i]) && (i != 4 && i != 7))
+        if (!isdigit(static_cast<unsigned char>(date[i])) && (i != 4 && i != 7))
             return false;
     }
 
@@ -77,12 +77,34 @@ bool btcEx::isDateValid(std::string date) {
 //float or positive int 0 - 1000
 bool btcEx::isValueValid(std::string value) {
 
-    float fvalue = std::atof(value.c_str());
-    if (fvalue < 0) {
+    size_t i = 0;
+    if (i < value.length() && (value[i] == '-' || value[i] == '+'))
+        i++;
+
+    bool digit = false;
+    bool comma = false;
+    while(i < value.length()) {
+        if (std::isdigit(static_cast<unsigned char>(value[i])))
+            digit = true;
+        else if (value[i] == '.' && !comma)
+            comma = true;
+        else {
+            std::cerr << "Error: bad input => " << value << std::endl;
+            return false;
+        }
+        i++;
+    }
+    if (!digit) {
+        std::cerr << "Error: bad input => " << value << std::endl;
+        return false;
+    }
+
+    double dvalue = std::atof(value.c_str());
+    if (dvalue < 0) {
         std::cerr << "Error: not a positive number." << std::endl;
         return false;
     }
-    else if (fvalue > 1000) {
+    else if (dvalue > 1000) {
         std::cerr << "Error: too large a number." << std::endl;
         return false;
     }
@@ -91,46 +113,58 @@ bool btcEx::isValueValid(std::string value) {
 
 void btcEx::calculateValue(std::string date, float value) {
 
-    std::map<std::string, float>::const_iterator it = this->_data.lower_bound(date);
+    std::map<std::string, float>::const_iterator it = this->_data.upper_bound(date);
 
-    if (it == this->_data.begin() && it->first != date) {
+    if (it == this->_data.begin()) {
         std::cerr << "Error: there is not a previous date in the database" << std::endl;
         return ;
     }
-
-    if (it == this->_data.end() || it->first != date)
-        --it;
+    --it;
 
     std::cout << date << " => " << value << " = " << value * it->second << std::endl;
+}
+
+std::string btcEx::trim(const std::string& toTrim) {
+
+    size_t start = toTrim.find_first_not_of(" \t\r");
+    if (start == std::string::npos)
+        return "";
+    
+    size_t end = toTrim.find_last_not_of(" \t\r");
+    std::string result = toTrim.substr(start, end - start + 1);
+    return result;
 }
 
 void btcEx::processInputData(const std::string& filename) {
 
     std::string line;
-    std::ifstream database(filename);
+    std::ifstream database(filename.c_str());
     if (!database.is_open())
-        throw std::runtime_error("Error: could not open the input data");
-    std::getline(database, line, '\n'); //or maybe the first one doesnt have to be "date | value"
+        throw std::runtime_error("Error: could not open file.");
 
-    size_t comma;
+    size_t pipe;
     std::string dateInput;
     std::string valueInput;
+    bool firstLine = true;
     while (std::getline(database, line, '\n')) {
 
-        comma = line.find('|');
-        if (comma == std::string::npos)
+        if (firstLine) {
+            firstLine = false;
+            if (trim(line) == "date | value")
+                continue;
+        }
+
+        if (trim(line).empty())
+            continue;
+
+        pipe = line.find('|');
+        if (pipe == std::string::npos) {
             std::cerr << "Error: bad input => " << line << std::endl;
-        dateInput = line.substr(0, comma);
-        valueInput = line.substr(comma + 1);
+            continue;
+        }
+        dateInput = trim(line.substr(0, pipe));
+        valueInput = trim(line.substr(pipe + 1));
 
-        size_t space = dateInput.find_last_not_of("\t");
-        if (space != std::string::npos)
-            dateInput.erase(space + 1);
-
-        space = valueInput.find_first_not_of("\t");
-        if (space != std::string::npos)
-            valueInput.erase(0, space);
-        
         if (!isDateValid(dateInput)) {
             std::cerr << "Error: bad input => " << dateInput << std::endl; 
             continue;
@@ -143,5 +177,3 @@ void btcEx::processInputData(const std::string& filename) {
     }
 
 }
-
-//check throughout if strings empty

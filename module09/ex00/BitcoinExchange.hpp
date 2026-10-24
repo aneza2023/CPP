@@ -14,6 +14,7 @@ class btcEx {
 
         bool isDateValid(std::string date);
         bool isValueValid(std::string value);
+        static std::string trim(const std::string& toTrim);
         void calculateValue(std::string date, float value);
     
     public:
