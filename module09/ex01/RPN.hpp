@@ -8,11 +8,12 @@
 #include <cctype>
 #include <exception>
 #include <climits>
+#include <list>
 
 class rpn {
     
     private:
-        std::stack<int>   _values; 
+        std::stack<int, std::list<int> >   _values; 
 
         class rpnException : public std::exception {
             private:
