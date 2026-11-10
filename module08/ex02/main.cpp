@@ -48,5 +48,30 @@ int main(void) {
         ++itl;
     }
     std::list<int> l(lstack);
-    return 0;    
+    // return 0;    
+
+    //more tests
+    //independent copy
+    std::cout << std::endl;
+    MutantStack<int> copy(mstack);
+    MutantStack<int> assigned;
+    assigned = mstack;
+    mstack.push(42);
+    std::cout << "original size: " << mstack.size() << ", copy size: " << copy.size() << ", assigned size: " << assigned.size() << std::endl;
+
+    // changing elements through an iterator
+    std::cout << std::endl;
+    for (MutantStack<int>::iterator i = mstack.begin(); i != mstack.end(); ++i)
+        *i *= 2;
+    std::cout << "top after *= 2: " << mstack.top() << std::endl;
+
+    // works with other types too
+    std::cout << std::endl;
+    MutantStack<std::string> words;
+    words.push("hello");
+    words.push("world");
+    for (MutantStack<std::string>::iterator w = words.begin(); w != words.end(); ++w)
+        std::cout << *w << std::endl;
+
+    return 0;
 }

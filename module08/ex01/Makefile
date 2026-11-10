@@ -1,6 +1,7 @@
 NAME = Span
 SRC = main.cpp\
 		Span.cpp
+HEADERS = Span.hpp
 
 OBJ = $(SRC:.cpp=.o)
 CC = c++
@@ -12,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(CPP_FLAGS)  $(OBJ) -o $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CC) $(FLAGS) $(CPP_FLAGS)  -c $< -o $@
 
 clean:
@@ -22,3 +23,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

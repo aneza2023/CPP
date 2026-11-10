@@ -39,5 +39,16 @@ int main(void) {
         std::cout << "integer not found" << std::endl;
     }
 
+    // test for const
+    // std::cout << std::endl;
+    // const std::vector<int> constVec(vectorInt);
+    // try {
+    //     std::vector<int>::const_iterator cit = ::easyfind(constVec, 8);
+    //     std::cout << "integer " << *cit << " found in const vector" << std::endl;
+    // }
+    // catch (std::exception &e) {
+    //     std::cout << "integer not found" << std::endl;
+    // }
+
     return 0;
 }

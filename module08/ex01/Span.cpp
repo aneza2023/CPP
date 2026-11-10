@@ -56,11 +56,11 @@ unsigned int Span::shortestSpan(void) {
     std::sort(copy.begin(), copy.end());
     std::vector<int>::iterator it = copy.begin();
 
-    int temp = *(it + 1) - *it;
+    long temp = static_cast<long>(*(it + 1)) - static_cast<long>(*it);
     for (it = copy.begin(); it != copy.end() - 1; it++) {
         
-        if (temp > *(it + 1) - *it)
-            temp = *(it + 1) - *it;
+        if (temp > static_cast<long>(*(it + 1)) - static_cast<long>(*it))
+            temp = static_cast<long>(*(it + 1)) - static_cast<long>(*it);
     }
 
     return temp;
@@ -74,6 +74,6 @@ unsigned int Span::longestSpan(void) {
     std::vector<int>::iterator min = std::min_element(this->_num.begin(), this->_num.end());
     std::vector<int>::iterator max = std::max_element(this->_num.begin(), this->_num.end());
 
-    return *max - *min;
+    return static_cast<long>(*max) - static_cast<long>(*min);
 }
 
